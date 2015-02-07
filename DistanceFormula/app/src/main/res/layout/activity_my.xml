@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MyActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/appTitle"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/direction"
+        android:id="@+id/textView2"
+        android:textSize="20dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/x1"
+        android:numeric="signed|decimal"
+        android:hint="X"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="17dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/y1"
+        android:layout_alignBottom="@+id/x1"
+        android:layout_toRightOf="@+id/x1"
+        android:layout_toEndOf="@+id/x1"
+        android:numeric="signed|decimal"
+        android:hint="Y"
+        android:singleLine="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/x2"
+        android:layout_alignTop="@+id/y1"
+        android:layout_toRightOf="@+id/y1"
+        android:layout_toEndOf="@+id/y1"
+        android:layout_marginLeft="60dp"
+        android:numeric="signed|decimal"
+        android:hint="X"
+        android:selectAllOnFocus="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/y2"
+        android:layout_alignBottom="@+id/x2"
+        android:layout_toRightOf="@+id/x2"
+        android:layout_toEndOf="@+id/x2"
+        android:numeric="signed|decimal"
+        android:hint="Y" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/distance"
+        android:id="@+id/DistanceTV"
+        android:textSize="20dp"
+        android:layout_toStartOf="@+id/x2"
+        android:layout_above="@+id/calcButton"
+        android:layout_toLeftOf="@+id/x2"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/midpoint"
+        android:id="@+id/MidpointTV"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/midpointResultTV"
+        android:layout_alignLeft="@+id/DistanceTV"
+        android:layout_alignStart="@+id/DistanceTV" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/calcButton"
+        android:layout_toStartOf="@+id/clearButton"
+        android:layout_toEndOf="@+id/x1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/DistanceTV"
+        android:layout_alignStart="@+id/DistanceTV" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/clearButton"
+        android:layout_alignTop="@+id/calcButton"
+        android:layout_alignRight="@+id/y2"
+        android:layout_alignEnd="@+id/y2"
+        android:layout_alignLeft="@+id/x2"
+        android:layout_alignStart="@+id/x2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/distanceResultTV"
+        android:layout_alignBottom="@+id/DistanceTV"
+        android:layout_toRightOf="@+id/MidpointTV"
+        android:layout_toEndOf="@+id/MidpointTV"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/midpointResultTV"
+        android:layout_toEndOf="@+id/distanceResultTV"
+        android:textSize="20dp"
+        android:layout_above="@+id/distanceResultTV"
+        android:layout_toRightOf="@+id/distanceResultTV"
+        android:layout_marginBottom="16dp" />
+</RelativeLayout>
